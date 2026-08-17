@@ -1,0 +1,27 @@
+.decrypted-text-parent {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.decrypted-text {
+  display: inline;
+}
+
+.encrypted {
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.decrypted-text-parent:hover .encrypted {
+  opacity: 1;
+}
+
+.decrypted-text-parent[role="button"] {
+  cursor: pointer;
+}
+
+.decrypted-text-parent:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
