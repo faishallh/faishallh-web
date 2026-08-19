@@ -7,6 +7,7 @@ import WarpText from "./components/WarpText/WarpText";
 import AccordionGallery from "./components/AccordionGallery/AccordionGallery";
 
 import profileImage from "./assets/profile.jpeg.jpeg";
+
 import projectUI1 from "./assets/project-ui1.png";
 import projectUI2 from "./assets/project-ui2.png";
 import projectUI3 from "./assets/project-ui3.png";
@@ -18,6 +19,12 @@ import projectUI8 from "./assets/project-ui8.png";
 import projectUI9 from "./assets/project-ui9.png";
 import projectUI10 from "./assets/project-ui10.png";
 
+import project2JuiceUI1 from "./assets/project2-juice-ui1.png";
+import project2JuiceUI2 from "./assets/project2-juice-ui2.png";
+import project2JuiceUI3 from "./assets/project2-juice-ui3.png";
+import project2JuiceUI4 from "./assets/project2-juice-ui4.png";
+import project2JuiceUI5 from "./assets/project2-juice-ui5.png";
+
 import "./App.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,7 +33,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   /* ==========================================
-     PROJECT UI
+     PROJECT UI SIPANTES
   ========================================== */
 
   const projectItems = [
@@ -79,6 +86,38 @@ function App() {
       image: projectUI10,
       title: "SIPANTES",
       description: "Project UI SIPANTES",
+    },
+  ];
+
+  /* ==========================================
+     PROJECT UI JUICE
+  ========================================== */
+
+  const project2Items = [
+    {
+      image: project2JuiceUI1,
+      title: "JUICE",
+      description: "Project UI JUICE",
+    },
+    {
+      image: project2JuiceUI2,
+      title: "JUICE",
+      description: "Project UI JUICE",
+    },
+    {
+      image: project2JuiceUI3,
+      title: "JUICE",
+      description: "Project UI JUICE",
+    },
+    {
+      image: project2JuiceUI4,
+      title: "JUICE",
+      description: "Project UI JUICE",
+    },
+    {
+      image: project2JuiceUI5,
+      title: "JUICE",
+      description: "Project UI JUICE",
     },
   ];
 
@@ -364,6 +403,26 @@ function App() {
       );
 
       gsap.fromTo(
+        ".project-description",
+        {
+          opacity: 0,
+          y: 40,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          ease: "power3.out",
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: ".projects-section",
+            start: "top 70%",
+            end: "bottom 35%",
+            scrub: 1,
+          },
+        }
+      );
+
+      gsap.fromTo(
         ".project-gallery-wrapper",
         {
           opacity: 0,
@@ -379,6 +438,31 @@ function App() {
             trigger: ".project-gallery-wrapper",
             start: "top 85%",
             end: "top 45%",
+            scrub: 1.2,
+          },
+        }
+      );
+
+      /* ========================================
+         ORDERFLOW
+      ======================================== */
+
+      gsap.fromTo(
+        ".orderflow-project-card",
+        {
+          opacity: 0,
+          y: 60,
+          scale: 0.96,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: ".orderflow-project-card",
+            start: "top 85%",
+            end: "top 55%",
             scrub: 1.2,
           },
         }
@@ -417,6 +501,7 @@ function App() {
         {
           opacity: 1,
           x: 0,
+          y: 0,
           scale: 1,
           ease: "power3.out",
           scrollTrigger: {
@@ -512,8 +597,7 @@ function App() {
       `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`
     );
 
-    const destinationEmail =
-      "faishalbizero10@gmail.com";
+    const destinationEmail = "faishalbizero10@gmail.com";
 
     window.location.href =
       `mailto:${destinationEmail}?subject=${subject}&body=${body}`;
@@ -570,6 +654,7 @@ function App() {
           </span>
 
           <div className="hero-title">
+
             <WarpText
               text={`HALO, SELAMAT DATANG DI
 WEBSITE PRIBADI SAYA`}
@@ -591,6 +676,7 @@ WEBSITE PRIBADI SAYA`}
                 height: "320px",
               }}
             />
+
           </div>
 
           <p className="hero-subtitle">
@@ -602,7 +688,10 @@ WEBSITE PRIBADI SAYA`}
             className="who-am-i-button"
             onClick={handleWhoAmI}
           >
-            <span>Who Am I</span>
+            <span>
+              Who Am I
+            </span>
+
             <span className="button-arrow">
               ↓
             </span>
@@ -809,18 +898,30 @@ WEBSITE PRIBADI SAYA`}
           </h2>
 
           {/* ====================================
-              PROJECT UI SIPANTES
+              PROJECT SIPANTES
           ==================================== */}
 
           <div className="project-description">
 
-            <span className="project-category">
-              PROJECT UI
-            </span>
+            <div className="project-heading-row">
 
-            <h3>
-              SIPANTES
-            </h3>
+              <span className="project-number">
+                01
+              </span>
+
+              <div className="project-heading-content">
+
+                <span className="project-category">
+                  PROJECT UI
+                </span>
+
+                <h3>
+                  SIPANTES
+                </h3>
+
+              </div>
+
+            </div>
 
             <p>
               Tampilan antarmuka pengguna (UI)
@@ -836,6 +937,126 @@ WEBSITE PRIBADI SAYA`}
             />
 
           </div>
+
+          {/* ====================================
+              PROJECT JUICE
+          ==================================== */}
+
+          <div className="project-description">
+
+            <div className="project-heading-row">
+
+              <span className="project-number">
+                02
+              </span>
+
+              <div className="project-heading-content">
+
+                <span className="project-category">
+                  PROJECT UI
+                </span>
+
+                <h3>
+                  JUICE
+                </h3>
+
+              </div>
+
+            </div>
+
+            <p>
+              Tampilan antarmuka pengguna (UI)
+              untuk project JUICE.
+            </p>
+
+          </div>
+
+          <div className="project-gallery-wrapper">
+
+            <AccordionGallery
+              items={project2Items}
+            />
+
+          </div>
+
+          {/* ====================================
+              PROJECT WEB ORDERFLOW
+          ==================================== */}
+
+          <div className="project-description">
+
+            <div className="project-heading-row">
+
+              <span className="project-number">
+                03
+              </span>
+
+              <div className="project-heading-content">
+
+                <span className="project-category">
+                  PROJECT WEB
+                </span>
+
+                <h3>
+                  ORDERFLOW
+                </h3>
+
+              </div>
+
+            </div>
+
+            <p>
+              Website demo sistem pemesanan produk
+              yang saya buat sebagai project web.
+            </p>
+
+          </div>
+
+          {/* SATU CARD ORDERFLOW SAJA */}
+
+          <a
+            href="https://faishallh.github.io/OrderFlow/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="orderflow-project-card"
+          >
+
+            <div className="orderflow-card-content">
+
+              <div className="orderflow-card-number">
+                03
+              </div>
+
+              <div className="orderflow-card-info">
+
+                <span className="orderflow-card-category">
+                  WEB PROJECT
+                </span>
+
+                <h4>
+                  ORDERFLOW
+                </h4>
+
+                <p>
+                  Demo website sistem pemesanan
+                  produk dengan tampilan yang
+                  sederhana dan fungsional.
+                </p>
+
+                <span className="orderflow-demo-note">
+                  Ini hanya demo — bukan sistem
+                  OrderFlow asli.
+                </span>
+
+              </div>
+
+              <div className="orderflow-card-arrow">
+                ↗
+              </div>
+
+            </div>
+
+          </a>
 
         </div>
       </section>
@@ -923,6 +1144,7 @@ WEBSITE PRIBADI SAYA`}
               className="contact-submit"
             >
               Kirim Pesan
+
               <span>
                 →
               </span>
@@ -991,16 +1213,14 @@ WEBSITE PRIBADI SAYA`}
                 className="footer-contact-link"
               >
                 Let's Work Together
+
                 <span>
                   →
                 </span>
+
               </a>
 
             </div>
-
-            {/* ========================================
-                SOCIAL MEDIA
-            ======================================== */}
 
             <div className="footer-column">
 
